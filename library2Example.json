@@ -1,0 +1,64 @@
+[ {
+  "name" : "Гарри Поттер",
+  "authors" : [ {
+    "name" : "Роулинг"
+  } ],
+  "date" : 1554632474374,
+  "ageRestriction" : "PLUS7",
+  "price" : 23.3,
+  "gift" : false
+}, {
+  "name" : "Гарри Поттер",
+  "authors" : [ {
+    "name" : "Роулинг"
+  } ],
+  "date" : 1554632474374,
+  "ageRestriction" : "PLUS7",
+  "price" : 23.3,
+  "gift" : false
+}, {
+  "name" : "Гарри Поттер",
+  "authors" : [ {
+    "name" : "Роулинг"
+  } ],
+  "date" : 1554632474374,
+  "ageRestriction" : "PLUS7",
+  "price" : 23.3,
+  "gift" : false
+}, {
+  "name" : "ыв",
+  "authors" : [ {
+    "name" : "ыв"
+  } ],
+  "date" : 11199330000000,
+  "ageRestriction" : "PLUS16",
+  "price" : 1212.0,
+  "gift" : true
+}, {
+  "name" : "Ghj",
+  "authors" : [ {
+    "name" : "wewe"
+  } ],
+  "date" : 11199330000000,
+  "ageRestriction" : "PLUS16",
+  "price" : 5.4676787E7,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+} ]
