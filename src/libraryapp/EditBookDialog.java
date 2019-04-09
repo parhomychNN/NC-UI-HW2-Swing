@@ -14,7 +14,15 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 
-public class EditBookDialog extends JDialog {
+public class EditBookDialog extends  AbstractBookModificationDialog {
+
+    JTextField nameTextField;
+    JTextField authorTextField;
+    JFormattedTextField dateTextField;
+    JComboBox<AgeRestriction> ageRestrictComboBox;
+    JTextField priceTextField;
+    JCheckBox isGiftCheckBox;
+
     public EditBookDialog(LibraryMainFrame owner, HashMap<String, Component> mainFrameSharedComponents, int currentItemRow) {
         setModal(true);
         setSize(400, 600);
@@ -32,8 +40,8 @@ public class EditBookDialog extends JDialog {
 
         // get information from tableModel
         Book bookForEdit = owner.getTableModel().getBooks().get(currentItemRow);
-        JTextField nameTextField = new JTextField(bookForEdit.getName());
-        JTextField authorTextField = new JTextField(bookForEdit.getAuthorNames());
+        nameTextField = new JTextField(bookForEdit.getName());
+        authorTextField = new JTextField(bookForEdit.getAuthorNames());
 
         MaskFormatter dateMaskFormatter = null;
         try {
@@ -46,7 +54,7 @@ public class EditBookDialog extends JDialog {
 
         dateMaskFormatter.setPlaceholderCharacter('_');
         JLabel dateLabel = new JLabel("Дата добавления");
-        JFormattedTextField dateTextField = new JFormattedTextField(dateMaskFormatter);
+        dateTextField = new JFormattedTextField(dateMaskFormatter);
         dateTextField.setValue(df.format(bookForEdit.getDate()));
                 //new JFormattedTextField(dateMaskFormatter);
 
@@ -56,13 +64,13 @@ public class EditBookDialog extends JDialog {
                 AgeRestriction.PLUS16,
                 AgeRestriction.PLUS18
         };
-        JComboBox<AgeRestriction> ageRestrictComboBox = new JComboBox<>(ageRestrictOptions);
+        ageRestrictComboBox = new JComboBox<>(ageRestrictOptions);
         ageRestrictComboBox.setSelectedItem(bookForEdit.getAgeRestriction());
 
-        JTextField priceTextField = new JTextField();
+        priceTextField = new JTextField();
         priceTextField.setText(String.valueOf(bookForEdit.getPrice()));
 
-        JCheckBox isGiftCheckBox = new JCheckBox();
+        isGiftCheckBox = new JCheckBox();
         isGiftCheckBox.setSelected(bookForEdit.getGift());
         nameTextField.setColumns(20);
 
@@ -135,4 +143,6 @@ public class EditBookDialog extends JDialog {
         setResizable(true);
         setVisible(true);
     }
+
+
 }

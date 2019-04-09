@@ -12,6 +12,7 @@ public class Book {
     private Author[] authors;
     private Date date = new Date();
     private AgeRestriction ageRestriction;
+
     private double price;
     private Boolean isGift = false;
 

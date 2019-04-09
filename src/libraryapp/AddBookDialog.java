@@ -3,6 +3,7 @@ package libraryapp;
 import book.AgeRestriction;
 import book.Author;
 import book.Book;
+import book.BookEntryValidator;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -15,8 +16,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 
-public class AddBookDialog extends JDialog {
+public class AddBookDialog extends AbstractBookModificationDialog {
+
+    /*private JTextField nameTextField;
+    private JTextField authorTextField;
+    private JFormattedTextField dateTextField;
+    private JComboBox<AgeRestriction> ageRestrictComboBox;
+    private JTextField priceTextField;
+    private JCheckBox isGiftCheckBox;
+*/
     public AddBookDialog(LibraryMainFrame owner, HashMap<String, Component> mainFrameSharedComponents) {
+        super();
         setModal(true);
         setSize(400, 600);
         setLocation(400, 150);
@@ -31,8 +41,9 @@ public class AddBookDialog extends JDialog {
         JLabel priceLabel = new JLabel("Цена книги");
         JLabel isGiftLabel = new JLabel("Получена в дар");
 
-        JTextField authorTextField = new JTextField();
-        JTextField nameTextField = new JTextField();
+        //authorTextField = new JTextField();
+        authorTextField = new JTextField();
+        nameTextField = new JTextField();
         MaskFormatter dateMaskFormatter = null;
         try {
             dateMaskFormatter = new MaskFormatter("##.##.####");
@@ -41,7 +52,8 @@ public class AddBookDialog extends JDialog {
         }
         dateMaskFormatter.setPlaceholderCharacter('_');
         JLabel dateLabel = new JLabel("Дата добавления");
-        JFormattedTextField dateTextField = new JFormattedTextField(dateMaskFormatter);
+
+        dateTextField = new JFormattedTextField(dateMaskFormatter);
 
         AgeRestriction[] ageRestrictOptions = {
                 AgeRestriction.PLUS7,
@@ -49,11 +61,11 @@ public class AddBookDialog extends JDialog {
                 AgeRestriction.PLUS16,
                 AgeRestriction.PLUS18
         };
-        JComboBox<AgeRestriction> ageRestrictComboBox = new JComboBox<>(ageRestrictOptions);
+        ageRestrictComboBox = new JComboBox<>(ageRestrictOptions);
 
-        JTextField priceTextField = new JTextField();
+        priceTextField = new JTextField();
 
-        JCheckBox isGiftCheckBox = new JCheckBox();
+        isGiftCheckBox = new JCheckBox();
 
         nameTextField.setColumns(20);
 
@@ -81,15 +93,18 @@ public class AddBookDialog extends JDialog {
                 e1.getMessage();
             }
 
-            Book bookToAdd = new Book(nameTextField.getText(),
-                    new Author[]{new Author(authorTextField.getText())},
-                    date,
-                    (AgeRestriction) ageRestrictComboBox.getSelectedItem(),
-                    Double.parseDouble(priceTextField.getText()),
-                    isGiftCheckBox.isSelected());
-            // TODO еси все ок и верификация прошла норм, добавить книгу
-            owner.getTableModel().addBook(bookToAdd);
-            this.dispose();
+            // в условии - валидация
+            if (BookEntryValidator.checkBook(this)) {
+                Book bookToAdd = new Book(nameTextField.getText(),
+                        new Author[]{new Author(authorTextField.getText())},
+                        date,
+                        (AgeRestriction) ageRestrictComboBox.getSelectedItem(),
+                        Double.parseDouble(priceTextField.getText()),
+                        isGiftCheckBox.isSelected());
+                // TODO еси все ок и верификация прошла норм, добавить книгу
+                owner.getTableModel().addBook(bookToAdd);
+                this.dispose();
+            }
         });
 
         lowPanel.add(addButton);
@@ -122,4 +137,6 @@ public class AddBookDialog extends JDialog {
         setResizable(true);
         setVisible(true);
     }
+
+
 }
