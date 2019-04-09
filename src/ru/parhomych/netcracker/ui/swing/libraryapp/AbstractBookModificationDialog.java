@@ -1,6 +1,6 @@
-package libraryapp;
+package ru.parhomych.netcracker.ui.swing.libraryapp;
 
-import book.AgeRestriction;
+import ru.parhomych.netcracker.ui.swing.book.AgeRestriction;
 
 import javax.swing.*;
 
@@ -13,6 +13,10 @@ public class AbstractBookModificationDialog extends JDialog{
     protected JCheckBox isGiftCheckBox;
 
     AbstractBookModificationDialog(){}
+
+    public JCheckBox getIsGiftCheckBox() {
+        return isGiftCheckBox;
+    }
 
     public JTextField getNameTextField() {
         return nameTextField;
@@ -28,5 +32,9 @@ public class AbstractBookModificationDialog extends JDialog{
 
     public JTextField getPriceTextField() {
         return priceTextField;
+    }
+
+    public void setPriceTextField(JTextField priceTextField) {
+        this.priceTextField = priceTextField;
     }
 }

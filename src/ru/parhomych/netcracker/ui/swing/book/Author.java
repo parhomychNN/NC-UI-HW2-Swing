@@ -1,4 +1,4 @@
-package book;
+package ru.parhomych.netcracker.ui.swing.book;
 
 public class Author {
 

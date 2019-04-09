@@ -1,62 +1,44 @@
-package libraryapp;
+package ru.parhomych.netcracker.ui.swing.libraryapp;
 
-import book.AgeRestriction;
-import book.Author;
-import book.Book;
+import ru.parhomych.netcracker.ui.swing.book.*;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
 import java.awt.*;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 
-public class EditBookDialog extends  AbstractBookModificationDialog {
+public class AddBookDialog extends AbstractBookModificationDialog {
 
-    JTextField nameTextField;
-    JTextField authorTextField;
-    JFormattedTextField dateTextField;
-    JComboBox<AgeRestriction> ageRestrictComboBox;
-    JTextField priceTextField;
-    JCheckBox isGiftCheckBox;
-
-    public EditBookDialog(LibraryMainFrame owner, HashMap<String, Component> mainFrameSharedComponents, int currentItemRow) {
+    public AddBookDialog(LibraryMainFrame owner) {
         setModal(true);
         setSize(400, 600);
         setLocation(400, 150);
         setTitle("Добавление книги");
 
-        JButton editButton = new JButton("Редактировать");
+        JButton addButton = new JButton("Добавить");
         JButton cancelButton = new JButton("Отмена");
-        JLabel infoLabel = new JLabel("Введите данные для редактирования книги:");
+        JLabel infoLabel = new JLabel("Введите данные о новой книге:");
         JLabel nameLabel = new JLabel("Название книги");
         JLabel authorLabel = new JLabel("Автор");
         JLabel ageRestrictLabel = new JLabel("Ограничение по возрасту");
         JLabel priceLabel = new JLabel("Цена книги");
         JLabel isGiftLabel = new JLabel("Получена в дар");
 
-        // get information from tableModel
-        Book bookForEdit = owner.getTableModel().getBooks().get(currentItemRow);
-        nameTextField = new JTextField(bookForEdit.getName());
-        authorTextField = new JTextField(bookForEdit.getAuthorNames());
-
+        //authorTextField = new JTextField();
+        authorTextField = new JTextField();
+        nameTextField = new JTextField();
         MaskFormatter dateMaskFormatter = null;
         try {
             dateMaskFormatter = new MaskFormatter("##.##.####");
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
-        DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
-
         dateMaskFormatter.setPlaceholderCharacter('_');
         JLabel dateLabel = new JLabel("Дата добавления");
+
         dateTextField = new JFormattedTextField(dateMaskFormatter);
-        dateTextField.setValue(df.format(bookForEdit.getDate()));
-                //new JFormattedTextField(dateMaskFormatter);
 
         AgeRestriction[] ageRestrictOptions = {
                 AgeRestriction.PLUS7,
@@ -65,16 +47,12 @@ public class EditBookDialog extends  AbstractBookModificationDialog {
                 AgeRestriction.PLUS18
         };
         ageRestrictComboBox = new JComboBox<>(ageRestrictOptions);
-        ageRestrictComboBox.setSelectedItem(bookForEdit.getAgeRestriction());
 
         priceTextField = new JTextField();
-        priceTextField.setText(String.valueOf(bookForEdit.getPrice()));
 
         isGiftCheckBox = new JCheckBox();
-        isGiftCheckBox.setSelected(bookForEdit.getGift());
+
         nameTextField.setColumns(20);
-
-
 
         cancelButton.addActionListener(e -> this.dispose());
 
@@ -84,11 +62,8 @@ public class EditBookDialog extends  AbstractBookModificationDialog {
         JPanel lowPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         mainPanel.add(lowPanel, BorderLayout.SOUTH);
 
-        // EDIT Button Action
-        editButton.addActionListener(e -> {
-
-            // TODO сделать так, чтобы много авторов через запятую попадали в список
-            // TODO верификация введенных данных
+        // ADD Button Action
+        addButton.addActionListener(e -> {
 
             // Парсинг введенных данных и создание объекта Book на добавление
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy");
@@ -100,18 +75,21 @@ public class EditBookDialog extends  AbstractBookModificationDialog {
                 e1.getMessage();
             }
 
-            Book bookAfterEdit = new Book(nameTextField.getText(),
-                    new Author[]{new Author(authorTextField.getText())},
-                    date,
-                    (AgeRestriction) ageRestrictComboBox.getSelectedItem(),
-                    Double.parseDouble(priceTextField.getText()),
-                    isGiftCheckBox.isSelected());
-            // TODO если все ок и верификация прошла норм, добавить книгу
-            owner.getTableModel().editBook(currentItemRow, bookAfterEdit);
-            this.dispose();
+            // в условии - валидация
+            if (BookEntryValidator.checkBook(this)) {
+
+                Book bookToAdd = new Book(nameTextField.getText(),
+                        AuthorsNamesParser.parseAuthorsNames(authorTextField.getText()),
+                        date,
+                        (AgeRestriction) ageRestrictComboBox.getSelectedItem(),
+                        Double.parseDouble(priceTextField.getText()),
+                        isGiftCheckBox.isSelected());
+                owner.getTableModel().addBook(bookToAdd);
+                this.dispose();
+            }
         });
 
-        lowPanel.add(editButton);
+        lowPanel.add(addButton);
         lowPanel.add(cancelButton);
         // for infolabel
         JPanel highPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
@@ -123,8 +101,6 @@ public class EditBookDialog extends  AbstractBookModificationDialog {
         wrapTextAreas.setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
         wrapTextAreas.add(textAreas);
         mainPanel.add(wrapTextAreas, BorderLayout.CENTER);
-
-
 
         textAreas.add(nameLabel);
         textAreas.add(nameTextField);

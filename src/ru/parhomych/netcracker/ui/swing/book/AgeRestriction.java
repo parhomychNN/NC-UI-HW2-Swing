@@ -1,4 +1,4 @@
-package book;
+package ru.parhomych.netcracker.ui.swing.book;
 
 public enum AgeRestriction {
     PLUS7("7+"), PLUS12("12+"), PLUS16("16+"), PLUS18("18+");

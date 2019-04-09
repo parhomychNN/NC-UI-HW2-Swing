@@ -1,7 +1,6 @@
-package book;
+package ru.parhomych.netcracker.ui.swing.book;
 
 
-import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonGenerator;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
@@ -9,10 +8,8 @@ import org.codehaus.jackson.type.TypeReference;
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

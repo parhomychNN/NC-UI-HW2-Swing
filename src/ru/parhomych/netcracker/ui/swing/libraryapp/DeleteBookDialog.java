@@ -1,11 +1,10 @@
-package libraryapp;
+package ru.parhomych.netcracker.ui.swing.libraryapp;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.HashMap;
 
 public class DeleteBookDialog extends JDialog {
-    public DeleteBookDialog(LibraryMainFrame owner, HashMap<String, Component> mainFrameSharedComponents, int currentItemRow) {
+    public DeleteBookDialog(LibraryMainFrame owner, int currentItemRow) {
         setModal(true);
         setSize(200, 200);
         setLocation(400, 250);
@@ -33,7 +32,6 @@ public class DeleteBookDialog extends JDialog {
 
             owner.getTableModel().removeBook(currentItemRow);
 
-            ((JLabel)mainFrameSharedComponents.get("infoLabel")).setText("Удалили книгу");
             this.dispose();
         });
 

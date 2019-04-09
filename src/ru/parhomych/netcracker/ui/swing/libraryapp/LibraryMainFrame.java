@@ -1,6 +1,6 @@
-package libraryapp;
+package ru.parhomych.netcracker.ui.swing.libraryapp;
 
-import book.BookTableModel;
+import ru.parhomych.netcracker.ui.swing.book.BookTableModel;
 import org.apache.commons.io.FilenameUtils;
 
 import javax.swing.*;
@@ -9,14 +9,10 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.io.File;
-import java.util.HashMap;
 
 public class LibraryMainFrame extends JFrame {
 
-
-    // hash map for important components
-    HashMap<String, Component> mainFrameSharedComponents = new HashMap<>();
-
+    private JButton saveAsButton;
     private JButton editButton;
     private JButton deleteButton;
     private JButton addButton;
@@ -24,6 +20,7 @@ public class LibraryMainFrame extends JFrame {
     private JMenuItem addBookMenuItem;
     private JMenuItem deleteBookMenuItem;
     private JMenuItem editBookMenuItem;
+    private JLabel infoText;
 
     private JTable booksTable;
 
@@ -34,15 +31,17 @@ public class LibraryMainFrame extends JFrame {
         return tableModel;
     }
 
+    File currentFile = null;
+
     public void setTableModel(BookTableModel tableModel) {
         this.tableModel = tableModel;
     }
 
-    public LibraryMainFrame(){
+    public LibraryMainFrame() {
         setTitle("Система учета книг библиотеки");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(800, 600);
-        setLocation(200,100);
+        setLocation(200, 100);
 
 
         // MENU
@@ -86,7 +85,6 @@ public class LibraryMainFrame extends JFrame {
         });
         menuBar.add(menuHelp);
 
-
         JPanel mainPanel = new JPanel(new BorderLayout());
         setContentPane(mainPanel);
         JPanel highPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -96,7 +94,7 @@ public class LibraryMainFrame extends JFrame {
         lowPanel.setName("low");
         mainPanel.add(lowPanel, BorderLayout.SOUTH);
 
-        JLabel infoText = new JLabel("Тут отладочная инфа");
+        infoText = new JLabel("Добавляйте книги в новую библиотеку (не забудьте её сохранить)");
         highPanel.add(infoText);
 
         // TABLE
@@ -106,8 +104,7 @@ public class LibraryMainFrame extends JFrame {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 currentItemRow = booksTable.getSelectedRow();
-                if (currentItemRow > -1){
-                    infoText.setText(booksTable.getValueAt(currentItemRow, 0).toString() + " " + currentItemRow);
+                if (currentItemRow > -1) {
                     setEditElementsActive(true);
                 }
             }
@@ -115,8 +112,6 @@ public class LibraryMainFrame extends JFrame {
 
         JScrollPane tableScrollPane = new JScrollPane(booksTable);
         mainPanel.add(tableScrollPane, BorderLayout.CENTER);
-
-        mainFrameSharedComponents.put("infoLabel", infoText);
 
         editButton = new JButton("Редактировать");
         editButton.addActionListener(e -> editBook());
@@ -127,16 +122,19 @@ public class LibraryMainFrame extends JFrame {
         addButton = new JButton("Добавить новую");
         addButton.addActionListener(e -> addBook());
         lowPanel.add(addButton);
-        saveButton = new JButton("Сохранить библиотеку в файл...");
+        saveButton = new JButton("Сохранить");
         saveButton.addActionListener(e -> saveLibrary());
         lowPanel.add(saveButton);
+        saveAsButton = new JButton("Сохранить как...");
+        saveAsButton.addActionListener(e -> saveLibraryAs());
+        lowPanel.add(saveAsButton);
 
         setEditElementsActive(false);
         setAddElementsActive(true);
         setVisible(true);
     }
 
-    private void saveLibrary() {
+    private void chooseFile() {
         JFileChooser fileChooserDialog = new JFileChooser();
         fileChooserDialog.setDialogTitle("Сохранить библиотеку");
         FileNameExtensionFilter jsonSaveFileFilter = new FileNameExtensionFilter("JSON Library", "json");
@@ -145,20 +143,34 @@ public class LibraryMainFrame extends JFrame {
                 System.getProperty("user.dir")));
         int result = fileChooserDialog.showSaveDialog(this);
         if (result == JFileChooser.APPROVE_OPTION) {
-            File targetFileforSave = fileChooserDialog.getSelectedFile();
+            currentFile = fileChooserDialog.getSelectedFile();
 
-            if (FilenameUtils.getExtension(targetFileforSave.getName()).equalsIgnoreCase("json")) {
+            if (FilenameUtils.getExtension(currentFile.getName()).equalsIgnoreCase("json")) {
                 // filename is OK as-is
             } else {
-                targetFileforSave = new File(targetFileforSave.toString() + ".json");  // append .json
+                currentFile = new File(currentFile.toString() + ".json");  // append .json
             }
-
-
-            tableModel.saveChangesToJsonFile(this, targetFileforSave);
-            JOptionPane.showMessageDialog(this, "Сохранен файл: " +
-                    targetFileforSave.getName());
         }
+    }
 
+    private void saveLibraryAs() {
+        //saveLibrary();
+        chooseFile();
+        if (currentFile != null) {
+            saveLibrary();
+        }
+    }
+
+    private void saveLibrary() {
+        if (currentFile == null) {
+            chooseFile();
+        }
+        if (currentFile != null) {
+            tableModel.saveChangesToJsonFile(this, currentFile);
+            infoText.setText("Ваша библиотека: " + currentFile.getAbsolutePath());
+            JOptionPane.showMessageDialog(this, "Сохранен файл: " +
+                    currentFile.getName());
+        }
 
     }
 
@@ -171,17 +183,18 @@ public class LibraryMainFrame extends JFrame {
                 System.getProperty("user.dir")));
         int result = fileChooserDialog.showOpenDialog(this);
         if (result == JFileChooser.APPROVE_OPTION) {
-            File openedJsonLibrary = fileChooserDialog.getSelectedFile();
-            tableModel.openNewLibrary(openedJsonLibrary);
+            currentFile = fileChooserDialog.getSelectedFile();
+            tableModel.openNewLibrary(currentFile);
             setEditElementsActive(true);
+            infoText.setText("Ваша библиотека: " + currentFile.getAbsolutePath());
             JOptionPane.showMessageDialog(this, "Открыт файл: " +
-                    openedJsonLibrary.getName());
+                    currentFile.getName());
         }
     }
 
     private void editBook() {
-        if (booksTable.getSelectedRow() > -1){
-            new EditBookDialog(this, mainFrameSharedComponents, currentItemRow);
+        if (booksTable.getSelectedRow() > -1) {
+            new EditBookDialog(this, currentItemRow);
         } else {
             setEditElementsActive(false);
         }
@@ -189,17 +202,17 @@ public class LibraryMainFrame extends JFrame {
 
     private void deleteBook() {
         if (booksTable.getSelectedRow() > -1) {
-            new DeleteBookDialog(this, mainFrameSharedComponents, currentItemRow);
-        }else {
+            new DeleteBookDialog(this, currentItemRow);
+        } else {
             setEditElementsActive(false);
         }
     }
 
-    private void addBook(){
-        new AddBookDialog(this, mainFrameSharedComponents);
+    private void addBook() {
+        new AddBookDialog(this);
     }
 
-    private void aboutDialog(){
+    private void aboutDialog() {
         new AboutDialog();
     }
 

@@ -1,4 +1,4 @@
-package libraryapp;
+package ru.parhomych.netcracker.ui.swing.libraryapp;
 
 import javax.swing.*;
 import java.awt.*;

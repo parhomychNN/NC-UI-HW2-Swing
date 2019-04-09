@@ -1,4 +1,4 @@
-package book;
+package ru.parhomych.netcracker.ui.swing.book;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 

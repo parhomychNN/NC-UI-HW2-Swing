@@ -1,0 +1,568 @@
+[ {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : false
+}, {
+  "name" : "Идиот",
+  "authors" : [ {
+    "name" : "Достоевский"
+  } ],
+  "date" : 1522962000000,
+  "ageRestriction" : "PLUS12",
+  "price" : 0.0,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : false
+}, {
+  "name" : "Идиот",
+  "authors" : [ {
+    "name" : "Достоевский"
+  } ],
+  "date" : 1522962000000,
+  "ageRestriction" : "PLUS12",
+  "price" : 0.0,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : false
+}, {
+  "name" : "Идиот",
+  "authors" : [ {
+    "name" : "Достоевский"
+  } ],
+  "date" : 1522962000000,
+  "ageRestriction" : "PLUS12",
+  "price" : 0.0,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : false
+}, {
+  "name" : "Идиот",
+  "authors" : [ {
+    "name" : "Достоевский"
+  } ],
+  "date" : 1522962000000,
+  "ageRestriction" : "PLUS12",
+  "price" : 0.0,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : false
+}, {
+  "name" : "Идиот",
+  "authors" : [ {
+    "name" : "Достоевский"
+  } ],
+  "date" : 1522962000000,
+  "ageRestriction" : "PLUS12",
+  "price" : 0.0,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : false
+}, {
+  "name" : "Идиот",
+  "authors" : [ {
+    "name" : "Достоевский"
+  } ],
+  "date" : 1522962000000,
+  "ageRestriction" : "PLUS12",
+  "price" : 0.0,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : false
+}, {
+  "name" : "Идиот",
+  "authors" : [ {
+    "name" : "Достоевский"
+  } ],
+  "date" : 1522962000000,
+  "ageRestriction" : "PLUS12",
+  "price" : 0.0,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : false
+}, {
+  "name" : "Идиот",
+  "authors" : [ {
+    "name" : "Достоевский"
+  } ],
+  "date" : 1522962000000,
+  "ageRestriction" : "PLUS12",
+  "price" : 0.0,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : false
+}, {
+  "name" : "Идиот",
+  "authors" : [ {
+    "name" : "Достоевский"
+  } ],
+  "date" : 1522962000000,
+  "ageRestriction" : "PLUS12",
+  "price" : 0.0,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : false
+}, {
+  "name" : "Идиот",
+  "authors" : [ {
+    "name" : "Достоевский"
+  } ],
+  "date" : 1522962000000,
+  "ageRestriction" : "PLUS12",
+  "price" : 0.0,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : false
+}, {
+  "name" : "Идиот",
+  "authors" : [ {
+    "name" : "Достоевский"
+  } ],
+  "date" : 1522962000000,
+  "ageRestriction" : "PLUS12",
+  "price" : 0.0,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : false
+}, {
+  "name" : "Идиот",
+  "authors" : [ {
+    "name" : "Достоевский"
+  } ],
+  "date" : 1522962000000,
+  "ageRestriction" : "PLUS12",
+  "price" : 0.0,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : false
+}, {
+  "name" : "Идиот",
+  "authors" : [ {
+    "name" : "Достоевский"
+  } ],
+  "date" : 1522962000000,
+  "ageRestriction" : "PLUS12",
+  "price" : 0.0,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : true
+}, {
+  "name" : "Идиот",
+  "authors" : [ {
+    "name" : "Достоевский"
+  } ],
+  "date" : 1522962000000,
+  "ageRestriction" : "PLUS12",
+  "price" : 0.0,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : false
+}, {
+  "name" : "Идиот",
+  "authors" : [ {
+    "name" : "Достоевский"
+  } ],
+  "date" : 1522962000000,
+  "ageRestriction" : "PLUS12",
+  "price" : 0.0,
+  "gift" : true
+}, {
+  "name" : "Моря и окияны",
+  "authors" : [ {
+    "name" : "Кузькин"
+  } ],
+  "date" : 712958400000,
+  "ageRestriction" : "PLUS18",
+  "price" : 23.23,
+  "gift" : true
+}, {
+  "name" : "Тихий Дон",
+  "authors" : [ {
+    "name" : "Шолохов"
+  } ],
+  "date" : 1554584400000,
+  "ageRestriction" : "PLUS12",
+  "price" : 340.0,
+  "gift" : true
+}, {
+  "name" : "Винни Пух",
+  "authors" : [ {
+    "name" : "Милн Александр"
+  } ],
+  "date" : 1554411600000,
+  "ageRestriction" : "PLUS12",
+  "price" : 53.07,
+  "gift" : true
+} ]
